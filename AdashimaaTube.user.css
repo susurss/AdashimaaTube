@@ -255,6 +255,10 @@ Support me: https://ko-fi.com/sapondanaisriwan
             [page-subtype="home"] {
                 ytd-rich-grid-renderer {
                     --ytd-rich-grid-items-per-row: var(--video-per-row) i;
+                    --ytd-rich-grid-posts-per-row: var(--video-per-row) i;
+                    --ytd-rich-grid-slim-items-per-row: var(--video-per-row) i;
+                    --ytd-rich-grid-game-cards-per-row: var(--video-per-row) i;
+                    --ytd-rich-grid-mini-game-cards-per-row: var(--video-per-row) i;
                     #contents {
                         fixYoutubeLayout();
                     }
@@ -1462,6 +1466,10 @@ Support me: https://ko-fi.com/sapondanaisriwan
                 &[title="Shorts"] {
                     display: none;
                 }
+            }
+            /* Remove the items in Breaking News and Playables sections*/
+            [page-subtype="home"] ytd-rich-grid-renderer #contents #contents > ytd-rich-item-renderer:not([is-shorts-grid]) {
+                    display: none;
             }
 
             /* https://www.youtube.com/hashtag/shorts */
